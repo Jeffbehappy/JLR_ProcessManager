@@ -46,7 +46,7 @@ public class MainActivity extends ListActivity {
 				ApplicationInfo applicationInfo = null;
 				int[] pidMem=new int[] {process.pid};
 				Debug.MemoryInfo[] memInfo=activityManager.getProcessMemoryInfo(pidMem);
-				String memOccupy=memInfo[0].dalvikPrivateDirty+"kb";
+				String memOccupy=memInfo[0].dalvikPss+"kB";
 				try{
 				applicationInfo= packageManager.getApplicationInfo(process.processName, PackageManager.GET_META_DATA);
 				map.put("app_name", packageManager.getApplicationLabel(applicationInfo) );
